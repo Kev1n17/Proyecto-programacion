@@ -6,7 +6,7 @@ export default {
         method: 'GET',
         path: '/',
         handler: async (ctx) => {
-          ctx.body = '🚀 Strapi está funcionando correctamente en Render!';
+          ctx.body = '🚀 Strapi está funcionando correctamente en topo';
         },
         config: {
           auth: false,
