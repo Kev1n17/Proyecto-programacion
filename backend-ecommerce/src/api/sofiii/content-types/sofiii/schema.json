@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sofiiis",
+  "info": {
+    "singularName": "sofiii",
+    "pluralName": "sofiiis",
+    "displayName": "sofiii"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
