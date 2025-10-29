@@ -3,3 +3,4 @@ database:ecommerce_fa6i
 username:ecommerce_fa6i_user
 password:KXDP4kqGf03pNz79Qepe56ZS7OzluMKC
 internal url:postgresql://ecommerce_fa6i_user:KXDP4kqGf03pNz79Qepe56ZS7OzluMKC@dpg-d40lmbmmcj7s73fh3i2g-a/ecommerce_fa6i
+external url:postgresql://ecommerce_fa6i_user:KXDP4kqGf03pNz79Qepe56ZS7OzluMKC@dpg-d40lmbmmcj7s73fh3i2g-a.oregon-postgres.render.com/ecommerce_fa6i
