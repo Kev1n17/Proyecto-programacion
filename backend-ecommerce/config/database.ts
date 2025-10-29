@@ -25,11 +25,11 @@ export default ({ env }) => {
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
+        host: env('DATABASE_HOST', 'dpg-d40lmbmmcj7s73fh3i2g-a'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'e-commerce'),
-        user: env('DATABASE_USERNAME', ''),
-        password: env('DATABASE_PASSWORD', ''),
+        database: env('DATABASE_NAME', 'ecommerce_fa6i'),
+        user: env('DATABASE_USERNAME', 'ecommerce_fa6i_user'),
+        password: env('DATABASE_PASSWORD', 'KXDP4kqGf03pNz79Qepe56ZS7OzluMKC'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
