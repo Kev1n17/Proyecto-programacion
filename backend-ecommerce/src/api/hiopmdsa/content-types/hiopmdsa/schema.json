@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hiopmdsas",
+  "info": {
+    "singularName": "hiopmdsa",
+    "pluralName": "hiopmdsas",
+    "displayName": "hiopmdsa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
