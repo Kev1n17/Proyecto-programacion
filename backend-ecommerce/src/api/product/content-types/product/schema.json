@@ -38,22 +38,23 @@
     "price": {
       "type": "biginteger"
     },
-    "categoryObject": {
-      "type": "enumeration",
-      "enum": [
-        "collares",
-        "correas",
-        "jugetes",
-        "ropa",
-        "camas",
-        "bebederos"
-      ]
-    },
     "stock": {
       "type": "integer"
     },
     "isFeature": {
       "type": "boolean"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "subcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subcategory.subcategory",
+      "inversedBy": "products"
     }
   }
 }
