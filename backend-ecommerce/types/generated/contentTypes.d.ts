@@ -625,41 +625,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'productName'>;
     stock: Schema.Attribute.Integer;
-    subcategory: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::subcategorya.subcategorya'
+    subCategory: Schema.Attribute.Enumeration<
+      ['Collar', 'Correa', 'Ropa', 'Comedero', 'Bebedero']
     >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSubcategoryaSubcategorya
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'subcategoryas';
-  info: {
-    displayName: 'Subcategory';
-    pluralName: 'subcategoryas';
-    singularName: 'subcategorya';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::subcategorya.subcategorya'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'subCategoryName'>;
-    subCategoryName: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1182,7 +1150,6 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::product.product': ApiProductProduct;
-      'api::subcategorya.subcategorya': ApiSubcategoryaSubcategorya;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
