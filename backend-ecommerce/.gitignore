@@ -130,3 +130,4 @@ build
 .strapi-updater.json
 .strapi-cloud.json
 .env.production
+backend-ecommerce/contentTypes.d.ts
