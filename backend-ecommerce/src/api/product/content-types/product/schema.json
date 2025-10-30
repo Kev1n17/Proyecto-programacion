@@ -41,20 +41,18 @@
     "stock": {
       "type": "integer"
     },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
     "isFeature": {
       "type": "boolean"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "products"
-    },
     "subcategory": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::subcategory.subcategory",
-      "inversedBy": "products"
+      "relation": "oneToOne",
+      "target": "api::subcategorya.subcategorya"
     }
   }
 }
