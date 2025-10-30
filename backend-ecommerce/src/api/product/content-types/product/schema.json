@@ -58,7 +58,8 @@
     "category": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::article.article"
+      "target": "api::category.category",
+      "mappedBy": "product"
     }
   }
 }
