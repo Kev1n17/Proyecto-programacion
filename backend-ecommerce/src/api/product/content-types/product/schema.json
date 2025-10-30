@@ -36,9 +36,9 @@
       "default": true
     },
     "price": {
-      "type": "decimal"
+      "type": "biginteger"
     },
-    "categori": {
+    "categoryObject": {
       "type": "enumeration",
       "enum": [
         "collares",
