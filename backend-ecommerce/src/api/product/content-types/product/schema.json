@@ -41,18 +41,18 @@
     "stock": {
       "type": "integer"
     },
+    "isFeature": {
+      "type": "boolean"
+    },
     "subCategory": {
       "type": "enumeration",
       "enum": [
         "Collar",
         "Correa",
         "Ropa",
-        "Comedero",
-        "Bebedero"
+        "Bebedero",
+        "Comedero"
       ]
-    },
-    "isFeature": {
-      "type": "boolean"
     },
     "category": {
       "type": "relation",
