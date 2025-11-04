@@ -626,7 +626,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'productName'>;
     stock: Schema.Attribute.Integer;
     subCategory: Schema.Attribute.Enumeration<
-      ['Collar', 'Correa', 'Ropa', 'Bebedero', 'Comedero']
+      ['Collar', 'Correa', 'Ropa', 'Comedero', 'Bebedero']
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
