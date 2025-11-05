@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
 <main>
-  <h1>hola!!!!!!!!!!!!!!!!!!!!!</h1>
-   <button>Click me</button>
+  <h1></h1>
+   <button></button>
 </main>
   );
 }

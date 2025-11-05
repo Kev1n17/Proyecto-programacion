@@ -3,8 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
-
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,199 +13,121 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
+// 🔹 Datos por categoría
+const aromaticas = [
   {
-    title: "Correas",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Bebederos",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Vainilla",
+    href: "/productos/vainilla",
+    description: "Aroma dulce y cálido, ideal para ambientes relajados.",
   },
   {
-    title: "Vestimenta",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: "Lavanda",
+    href: "/productos/lavanda",
+    description: "Perfecta para dormir mejor y aliviar el estrés.",
   },
   {
-    title: "Actividades",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Canela",
+    href: "/productos/canela",
+    description: "Aroma especiado que llena de energía tu espacio.",
   },
-    {
-    title: "Casas",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+]
+
+const decorativas = [
+  {
+    title: "Minimalistas",
+    href: "/productos/minimalistas",
+    description: "Diseños simples y elegantes para tu hogar.",
   },
-  
+  {
+    title: "Con forma de flor",
+    href: "/productos/flor",
+    description: "Velas con estilo artesanal y estético.",
+  },
+  {
+    title: "Con cristales",
+    href: "/productos/cristales",
+    description: "Velas decorativas con piedras energéticas naturales.",
+  },
+]
+
+const sets = [
+  {
+    title: "Box Relax",
+    href: "/sets/relax",
+    description: "Incluye vela, té y una tarjeta personalizada.",
+  },
+  {
+    title: "Box Amor",
+    href: "/sets/amor",
+    description: "Ideal para regalar, con aromas suaves y románticos.",
+  },
+  {
+    title: "Box Hogar",
+    href: "/sets/hogar",
+    description: "Combiná distintas velas para ambientar tu casa.",
+  },
 ]
 
 const MenuList = () => {
-
   return (
     <NavigationMenu>
       <NavigationMenuList>
 
+        {/* 🔹 Todas las Velas */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Perros</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/docs">Todas las Velas</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        {/* 🔹 Velas Aromáticas */}
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Velas Aromáticas</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-white shadow-xl rounded-xl p-4 divide-y divide-gray-200 animate-slide-down">
             <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
+              {aromaticas.map((item) => (
+                <ListItem key={item.title} title={item.title} href={item.href}>
+                  {item.description}
                 </ListItem>
               ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-
+        {/* 🔹 Velas Decorativas */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Gatos</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuTrigger>Velas Decorativas</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-white shadow-xl rounded-xl p-4 divide-y divide-gray-200 animate-slide-down">
             <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
+              {decorativas.map((item) => (
+                <ListItem key={item.title} title={item.title} href={item.href}>
+                  {item.description}
                 </ListItem>
               ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
+        {/* 🔹 Sets de Regalos */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Conejos</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuTrigger>Sets de Regalos</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-white shadow-xl rounded-xl p-4 divide-y divide-gray-200 animate-slide-down">
             <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
+              {sets.map((item) => (
+                <ListItem key={item.title} title={item.title} href={item.href}>
+                  {item.description}
                 </ListItem>
               ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
+        {/* 🔹 Sobre Nosotros */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Aves</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        
-         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/docs">Sobre Nosotros</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
-
-        {/*<NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>List</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Components</div>
-                    <div className="text-muted-foreground">
-                      Browse all components in the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Documentation</div>
-                    <div className="text-muted-foreground">
-                      Learn how to use the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Blog</div>
-                    <div className="text-muted-foreground">
-                      Read our latest blog posts.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>Simple</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Components</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Documentation</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Blocks</Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#" className="flex-row items-center gap-2">
-                    <CircleHelpIcon />
-                    Backlog
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#" className="flex-row items-center gap-2">
-                    <CircleIcon />
-                    To Do
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#" className="flex-row items-center gap-2">
-                    <CircleCheckIcon />
-                    Done
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>*/}
 
       </NavigationMenuList>
     </NavigationMenu>
@@ -216,6 +136,7 @@ const MenuList = () => {
 
 export default MenuList
 
+// 🔹 ListItem con hover y transición
 function ListItem({
   title,
   children,
@@ -225,7 +146,10 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href}>
+        <Link
+          href={href}
+          className="block p-3 rounded-md hover:bg-yellow-100 transition-colors"
+        >
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
@@ -234,6 +158,5 @@ function ListItem({
       </NavigationMenuLink>
     </li>
   )
-
-  
 }
+
